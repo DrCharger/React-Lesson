@@ -2,10 +2,9 @@ import React from 'react';
 import UserAge from './UserAge';
 
 const Greeting = props => {
-  // console.log(props.user);
-  const age = UserAge(props.user.birthDate);
+  const age = UserAge(props.birthDate);
   return (
-    <div className="greeting">{`My name is ${props.user.firstName} ${props.user.lastName}. I'm ${age} years old`}</div>
+    <div className="greeting">{`My name is ${props.firstName} ${props.lastName}. I'm ${age} years old`}</div>
   );
 };
 
