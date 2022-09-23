@@ -5,7 +5,7 @@ class ColorPicker extends React.Component {
     document.querySelector('.picker__title').textContent = text;
   }
   reset = () => {
-    document.querySelector('.picker__title').textContent = ' ';
+    document.querySelector('.picker__title').textContent = '';
   };
   render() {
     return (
