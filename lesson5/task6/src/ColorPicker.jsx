@@ -1,9 +1,9 @@
 import React from 'react';
 
 class ColorPicker extends React.Component {
-  picker(text) {
-    document.querySelector('.picker__title').textContent = text;
-  }
+  picker = color => {
+    document.querySelector('.picker__title').textContent = color;
+  };
   reset = () => {
     document.querySelector('.picker__title').textContent = '';
   };
@@ -13,7 +13,7 @@ class ColorPicker extends React.Component {
         <div className="picker__title"></div>
         <div>
           <button
-            onMouseOver={() => this.picker('Coral')}
+            onMouseEnter={() => this.picker('Coral')}
             onMouseOut={this.reset}
             className="picker__button picker__button_coral"
           ></button>
