@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: './src/clock.html',
+        template: './src/index.html',
       }),
     ],
     resolve: {
