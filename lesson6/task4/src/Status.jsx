@@ -31,8 +31,8 @@ class Status extends React.Component {
     // }
     return (
       <div className="status">
-        {this.state.isOnline && <Online ok={() => this.online()} />}
-        {!this.state.isOffline && <Offline ok={() => this.offline()} />}
+        {this.state.isOnline && <Online />}
+        {!this.state.isOffline && <Offline />}
       </div>
     );
   }
