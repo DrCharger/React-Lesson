@@ -9,8 +9,14 @@ class Auth extends React.Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-      size: props.size,
+      spinner: <Spinner size={props.size} />,
     };
+    setTimeout(() => {
+      console.log(this.state.ok);
+      this.setState({
+        spinner: <Logout next={() => this.onLogout()} />,
+      });
+    }, 2000);
   }
 
   onLogin = async () => {
@@ -28,7 +34,8 @@ class Auth extends React.Component {
     return !this.state.isLoggedIn ? (
       <Login ok={() => this.onLogin()} />
     ) : (
-      <Spinner size={this.state.size} ok={() => this.onLogout()} />
+      this.state.spinner
+      // <Spinner size={this.state.size} ok={() => this.onLogout()} />
     );
   }
 }
