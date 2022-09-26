@@ -5,19 +5,15 @@ import './index.scss';
 
 class Auth extends React.Component {
   state = {
-    isOnline: false,
+    isLoggedIn: false,
   };
-  offline = () => {
+  onLogin = () => {
     this.setState({
-      isOnline: true,
+      isLoggedIn: true,
     });
   };
   render() {
-    return (
-      <div className="status">
-        {this.state.isOnline ? <Online /> : <Offline ok={() => this.offline()} />}
-      </div>
-    );
+    return <Login ok={() => this.onLogin()} />;
   }
 }
 
