@@ -16,22 +16,20 @@ class Auth extends React.Component {
   setTime = () => {
     setTimeout(() => {
       this.setState({
-        // spinner: <Spinner size={this.state.size} />,
-        spinner: <Logout next={() => this.onLogout()} />,
+        spinner: <Logout onLogout={() => this.onLogout()} />,
       });
     }, 2000);
   };
-  onLogin = async () => {
+  onLogin = () => {
     this.setState({
       isLoggedIn: true,
       spinner: <Spinner size={this.state.size} />,
     });
-    await this.setTime();
+    this.setTime();
   };
   onLogout = () => {
     this.setState({
       isLoggedIn: false,
-      spinner: <Spinner size={this.state.size} />,
     });
   };
 
@@ -40,9 +38,7 @@ class Auth extends React.Component {
       this.state.spinner
     ) : (
       // <Logout next={() => this.onLogout()} />
-      <Login ok={() => this.onLogin()} />
-
-      // <Spinner size={this.state.size} ok={() => this.onLogout()} />
+      <Login onLogin={() => this.onLogin()} />
     );
   }
 }

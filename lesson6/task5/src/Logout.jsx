@@ -5,7 +5,7 @@ class Logout extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      isLogged: props.next,
+      isLogged: props.onLogout,
     };
   }
   render() {
