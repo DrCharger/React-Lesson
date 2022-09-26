@@ -11,13 +11,13 @@ class Status extends React.Component {
   online = () => {
     this.setState({
       isOnline: false,
-      isFalse: true,
+      isOffline: true,
     });
   };
   offline = () => {
     this.setState({
       isOnline: true,
-      isFalse: false,
+      isOffline: false,
     });
   };
 
