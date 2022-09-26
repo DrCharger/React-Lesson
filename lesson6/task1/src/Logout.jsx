@@ -1,6 +1,6 @@
 import React from 'react';
 
-class onLogout extends React.Component {
+class Logout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,4 +15,4 @@ class onLogout extends React.Component {
     );
   }
 }
-export default onLogout;
+export default Logout;

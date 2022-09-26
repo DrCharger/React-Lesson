@@ -20,15 +20,17 @@ class Auth extends React.Component {
   };
 
   render() {
+    let button;
+    if (this.state.isLoggedIn) {
+      button = <Logout onClick={() => this.onLogout()} />;
+    } else {
+      button = <Login onClick={() => this.onLogin()} />;
+    }
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
 
-        {this.state.isLoggedIn ? (
-          <Logout onClick={() => this.onLogout()} />
-        ) : (
-          <Login onClick={() => this.onLogin()} />
-        )}
+        {button}
       </div>
     );
   }
