@@ -1,12 +1,6 @@
 import React from 'react';
 
 class Online extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     online: props.ok,
-  //   };
-  // }
   render() {
     return (
       <>
