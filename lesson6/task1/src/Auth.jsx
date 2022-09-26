@@ -1,34 +1,33 @@
 import React from 'react';
 import Greeting from './Greeting';
+import Logout from './Logout';
+import Login from './Login';
 import './index.scss';
 
 class Auth extends React.Component {
   state = {
     isLoggedIn: false,
   };
-  handleLogin = () => {
-    this.setState({
-      isLoggedIn: true,
-    });
-  };
-  handleLogout = () => {
+  onLogout = () => {
     this.setState({
       isLoggedIn: false,
     });
   };
+  onLogin = () => {
+    this.setState({
+      isLoggedIn: true,
+    });
+  };
+
   render() {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
 
-        {this.state.isLoggedIn ? (
-          <button className="btn logout" onClick={() => this.handleLogout()}>
-            Logout
-          </button>
+        {!this.state.isLoggedIn ? (
+          <Login onClick={() => this.onLogin()} />
         ) : (
-          <button className="btn login" onClick={() => this.handleLogin()}>
-            Login
-          </button>
+          <Logout onClick={() => this.onLogout()} />
         )}
       </div>
     );

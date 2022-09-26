@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GuestGreeting = () => {
-  return <div>Hi stranger. Please login</div>;
+  return <h1>Hi stranger. Please login</h1>;
 };
 
 export default GuestGreeting;
