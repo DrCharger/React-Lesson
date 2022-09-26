@@ -4,4 +4,4 @@ import Status from './Status';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Status unreadMessages={[]} />, rootElement);
+ReactDOM.render(<Status />, rootElement);
