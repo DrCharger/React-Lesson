@@ -1,19 +1,35 @@
 import React from 'react';
-import Online from './Online';
-import Offline from './Offline';
+import Login from './Login';
+import Logout from './Logout';
+import Spinner from './Spinner';
 import './index.scss';
 
 class Auth extends React.Component {
-  state = {
-    isLoggedIn: false,
-  };
-  onLogin = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+      size: props.size,
+    };
+  }
+
+  onLogin = async () => {
     this.setState({
       isLoggedIn: true,
     });
   };
+  onLogout = () => {
+    this.setState({
+      isLoggedIn: false,
+    });
+  };
+
   render() {
-    return <Login ok={() => this.onLogin()} />;
+    return !this.state.isLoggedIn ? (
+      <Login ok={() => this.onLogin()} />
+    ) : (
+      <Spinner size={this.state.size} ok={() => this.onLogout()} />
+    );
   }
 }
 

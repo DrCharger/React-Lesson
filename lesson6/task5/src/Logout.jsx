@@ -3,14 +3,14 @@ import React from 'react';
 class Logout extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.onLogout);
+    console.log(props);
     this.state = {
-      isLoggedIn: props.onLogout,
+      isLogged: props.next,
     };
   }
   render() {
     return (
-      <button className="btn logout" onClick={this.state.isLoggedIn}>
+      <button className="logout btn" onClick={this.state.isLogged}>
         Logout
       </button>
     );
