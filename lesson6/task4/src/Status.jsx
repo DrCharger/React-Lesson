@@ -5,16 +5,19 @@ import './index.scss';
 
 class Status extends React.Component {
   state = {
-    isOnline: false,
+    isOnline: true,
+    isOffline: false,
   };
   online = () => {
     this.setState({
       isOnline: false,
+      isOffline: true,
     });
   };
   offline = () => {
     this.setState({
       isOnline: true,
+      isOffline: false,
     });
   };
 
