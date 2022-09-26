@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Page from './Page';
+import Status from './Status';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Page unreadMessages={[]} />, rootElement);
+ReactDOM.render(<Status unreadMessages={[]} />, rootElement);
