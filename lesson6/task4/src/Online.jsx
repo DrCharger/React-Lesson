@@ -10,8 +10,7 @@ class Online extends React.Component {
   render() {
     return (
       <>
-        <span className="status__text">Online</span>
-        <button className="status__btn">All good!</button>
+        <span className="status__text">All good!</span>
       </>
     );
   }

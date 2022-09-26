@@ -5,7 +5,7 @@ import './index.scss';
 
 class Status extends React.Component {
   state = {
-    isOnline: false,
+    isOnline: true,
   };
 
   render() {
