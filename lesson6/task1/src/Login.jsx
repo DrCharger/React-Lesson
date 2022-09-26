@@ -4,13 +4,12 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      click: props.onClick,
+      isLoggedIn: props.onLogin,
     };
   }
-
   render() {
     return (
-      <button className="btn login" onClick={this.state.click}>
+      <button className="btn login" onClick={this.state.isLoggedIn}>
         Login
       </button>
     );

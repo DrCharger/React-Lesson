@@ -4,12 +4,12 @@ class Logout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      click: props.onClick,
+      isLoggedIn: props.onLogout,
     };
   }
   render() {
     return (
-      <button className="btn logout" onClick={this.state.click}>
+      <button className="btn logout" onClick={this.state.isLoggedIn}>
         Logout
       </button>
     );
