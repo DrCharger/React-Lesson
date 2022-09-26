@@ -5,18 +5,13 @@ import './index.scss';
 
 class Status extends React.Component {
   state = {
-    isOnline: false,
+    isOnline: true,
   };
-  offline = () => {
-    this.setState({
-      isOnline: true,
-    });
-  };
-
   render() {
     return (
       <div className="status">
-        {this.state.isOnline ? <Online /> : <Offline ok={() => this.offline()} />}
+        {this.state.isOnline && <Online />}
+        {!this.state.isOnline && <Offline />}
       </div>
     );
   }
