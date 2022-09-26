@@ -1,0 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Page from './Page';
+
+const rootElement = document.querySelector('#root');
+
+ReactDOM.render(<Page unreadMessages={[]} />, rootElement);
