@@ -24,10 +24,10 @@ class Auth extends React.Component {
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
 
-        {!this.state.isLoggedIn ? (
-          <Login onClick={() => this.onLogin()} />
-        ) : (
+        {this.state.isLoggedIn ? (
           <Logout onClick={() => this.onLogout()} />
+        ) : (
+          <Login onClick={() => this.onLogin()} />
         )}
       </div>
     );
