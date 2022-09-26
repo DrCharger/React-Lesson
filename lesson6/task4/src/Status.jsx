@@ -15,8 +15,7 @@ class Status extends React.Component {
   render() {
     return (
       <div className="status">
-        {this.state.isOnline && <Online />}
-        {!this.state.isOnline && <Offline ok={() => this.offline()} />}
+        {this.state.isOnline ? <Online /> : <Offline ok={() => this.offline()} />}
       </div>
     );
   }
