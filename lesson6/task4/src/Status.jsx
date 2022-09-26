@@ -6,21 +6,24 @@ import './index.scss';
 class Status extends React.Component {
   state = {
     isOnline: true,
+    isOffline: false,
   };
   online = () => {
     this.setState({
       isOnline: false,
+      isFalse: true,
     });
   };
   offline = () => {
     this.setState({
       isOnline: true,
+      isFalse: false,
     });
   };
 
   render() {
     let status;
-    if (this.state.isOnline) {
+    if (this.state.isOnline && !this.state.isOffline) {
       status = <Online ok={() => this.online()} />;
     } else {
       status = <Offline ok={() => this.offline()} />;
