@@ -6,18 +6,18 @@ import './index.scss';
 class Status extends React.Component {
   state = {
     isOnline: true,
-    isOffline: false,
+    isOffline: true,
   };
   online = () => {
     this.setState({
       isOnline: false,
-      isOffline: true,
+      isOffline: false,
     });
   };
   offline = () => {
     this.setState({
       isOnline: true,
-      isOffline: false,
+      isOffline: true,
     });
   };
 
@@ -31,11 +31,8 @@ class Status extends React.Component {
     // }
     return (
       <div className="status">
-        {this.state.isOnline ? (
-          <Online ok={() => this.online()} />
-        ) : (
-          <Offline ok={() => this.offline()} />
-        )}
+        {this.state.isOnline && <Online ok={() => this.online()} />}
+        {!this.state.isOffline && <Offline ok={() => this.offline()} />}
       </div>
     );
   }
