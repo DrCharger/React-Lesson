@@ -14,16 +14,7 @@ const Pagination = props => {
   }
 
   let isNextPageAvailable;
-  //   if (props.itemsPerPage >= props.totalItems) {
-  //     isNextPageAvailable = <button className="btn" onClick={props.goNext} disabled></button>;
-  //   } else {
-  //     isNextPageAvailable = (
-  //       <button className="btn" onClick={props.goNext}>
-  //         →
-  //       </button>
-  //     );
-  //   }
-  if (props.totalItems % 3 !== 0 || props.totalItems === props.itemsPerPage) {
+  if (props.totalItems % 3 === 0 && props.totalItems === props.itemsPerPage) {
     isNextPageAvailable = <button className="btn" onClick={props.goNext} disabled></button>;
   } else {
     isNextPageAvailable = (
