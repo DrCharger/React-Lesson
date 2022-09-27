@@ -14,7 +14,10 @@ const Pagination = props => {
   }
 
   let isNextPageAvailable;
-  if (props.totalItems % 3 === 0 && props.totalItems === props.itemsPerPage) {
+  if (
+    (props.totalItems % 3 === 0 && props.totalItems === props.itemsPerPage) ||
+    props.totalItems === props.itemsPerPage
+  ) {
     isNextPageAvailable = <button className="btn" onClick={props.goNext} disabled></button>;
   } else {
     isNextPageAvailable = (
