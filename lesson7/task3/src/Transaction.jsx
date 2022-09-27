@@ -3,6 +3,7 @@ import moment from 'moment';
 
 const formatTime = date => moment(date).format('HH : mm');
 const formatDate = date => moment(date).format('DD MMM');
+const formatAmount = amount => new Intl.NumberFormat('en-GB').format(amount);
 
 const Transactions = ({ from, to, amount, rate, time }) => {
   return (
@@ -13,7 +14,7 @@ const Transactions = ({ from, to, amount, rate, time }) => {
         {from} → {to}
       </span>
       <span className="transaction__rate">{rate}</span>
-      <span className="transaction__amount">{new Intl.NumberFormat('en-GB').format(amount)}</span>
+      <span className="transaction__amount">{formatAmount(amount)}</span>
     </li>
   );
 };
