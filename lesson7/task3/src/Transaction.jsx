@@ -5,7 +5,7 @@ const formatTime = date => moment(date).format('HH : mm');
 const formatDate = date => moment(date).format('DD MMM');
 const formatAmount = amount => new Intl.NumberFormat('en-GB').format(amount);
 
-const Transactions = ({ from, to, amount, rate, time }) => {
+const Transaction = ({ from, to, amount, rate, time }) => {
   return (
     <li className="transaction">
       <span className="transaction__date">{formatDate(time)}</span>
@@ -13,10 +13,10 @@ const Transactions = ({ from, to, amount, rate, time }) => {
       <span className="transaction__assets">
         {from} → {to}
       </span>
-      <span className="transaction__rate">{rate}</span>
+      <span className="transaction__rate">{formatAmount(rate)}</span>
       <span className="transaction__amount">{formatAmount(amount)}</span>
     </li>
   );
 };
 
-export default Transactions;
+export default Transaction;
