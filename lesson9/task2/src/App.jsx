@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import UserForm from './UserForm';
 
 class App extends Component {
-  createUser = (event, user) => {
-    event.preventDefault();
+  createUser = user => {
     console.log(user);
   };
 
