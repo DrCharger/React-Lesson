@@ -4,21 +4,21 @@ class Search extends Component {
   state = {
     value: '',
   };
-  handdleChange = event => {
+  handleChange = event => {
     this.setState({
       value: event.target.value,
     });
   };
-  handdleSubmit = event => {
+  search = event => {
     event.preventDefault();
-    alert(`${this.state.value}`);
+    alert(`Search text: ${this.state.value}`);
   };
   render() {
     return (
-      <form class="search" onSubmit={this.handdleSubmit}>
+      <form class="search" onSubmit={this.search}>
         <input
           type="text"
-          onChange={this.handdleChange}
+          onChange={this.handleChange}
           className="search__input"
           value={this.state.value}
         />
