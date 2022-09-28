@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Search extends Component {
   state = {
-    value: '',
+    value: 'good restaurant',
   };
   handleChange = event => {
     this.setState({
