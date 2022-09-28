@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  handleChange = event => {
-    const { name, value, checked, type } = event.target;
-
-    const valid = type === 'checkbox' ? checked : value;
-
-    this.setState({
-      [name]: valid,
-    });
-  };
-  onSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.formRef);
   };
@@ -19,7 +10,7 @@ class UserForm extends Component {
   };
   render() {
     return (
-      <form className="login-form" ref={this.setRef} onSubmit={this.onSubmit}>
+      <form className="login-form" ref={this.setRef} onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
