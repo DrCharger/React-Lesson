@@ -10,7 +10,7 @@ class Search extends Component {
     });
   };
   handdleSubmit = event => {
-    alert(`Search text: good restaurant`);
+    alert(`Search text: ${this.state.value}`);
   };
   render() {
     return (
