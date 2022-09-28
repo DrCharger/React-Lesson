@@ -10,12 +10,11 @@ class Search extends Component {
     });
   };
   handdleSubmit = event => {
-    event.preventDefault();
     alert(`Search text: good restaurant`);
   };
   render() {
     return (
-      <form class="search" onSubmit={this.handdleSubmit}>
+      <form class="search">
         <input
           type="text"
           onChange={this.handdleChange}
@@ -23,7 +22,7 @@ class Search extends Component {
           value={this.state.value}
           name="name"
         />
-        <button class="search__button" type="submit">
+        <button class="search__button" onClick={this.handdleSubmit}>
           Search
         </button>
       </form>
