@@ -3,7 +3,14 @@ import React, { Component } from 'react';
 class UserForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.formRef);
+    const formData = [...new FormData(this.formRef)].reduce(
+      (acc, [name, value]) => ({
+        ...acc,
+        [name]: value,
+      }),
+      {},
+    );
+    this.props.onSubmit(formData);
   };
   setRef = node => {
     this.formRef = node;
@@ -31,8 +38,8 @@ class UserForm extends Component {
           <select name="occupation" className="form-input">
             <option value="london">London</option>
             <option value="new-york">New York</option>
-            <option value="coconut">Sidney</option>
-            <option value="mango">Berlin</option>
+            <option value="sidney">Sidney</option>
+            <option value="berlin">Berlin</option>
           </select>
         </div>
         <div className="form-control">

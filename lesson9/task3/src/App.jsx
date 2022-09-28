@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import UserForm from './UserForm';
 
 class App extends Component {
-  createUser = formRef => {
-    const formData = [...new FormData(formRef)].reduce(
-      (acc, [name, value]) => ({
-        ...acc,
-        [name]: value,
-      }),
-      {},
-    );
+  createUser = formData => {
     console.log(formData);
   };
 
