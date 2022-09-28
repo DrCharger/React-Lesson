@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Search extends Component {
   state = {
-    value: 'good restaurant',
+    value: '',
   };
   handdleChange = event => {
     this.setState({
@@ -11,7 +11,7 @@ class Search extends Component {
   };
   handdleSubmit = event => {
     event.preventDefault();
-    alert(`Search text: ${this.state.value}`);
+    alert(`Search text: good restaurant`);
   };
   render() {
     return (
