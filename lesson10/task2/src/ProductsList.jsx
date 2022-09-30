@@ -2,7 +2,6 @@ import React from 'react';
 import Item from './Item';
 
 const ProductsList = ({ cartItems, sum }) => {
-  console.log(sum);
   return (
     <div className="products">
       <ul className="products__list">
