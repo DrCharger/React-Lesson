@@ -1,7 +1,8 @@
 import React from 'react';
 import Item from './Item';
 
-const ProductsList = ({ cartItems, sum }) => {
+const ProductsList = ({ cartItems }) => {
+  const total = this.props.cartItems.reduce((acc, item) => acc + item.price, 0);
   return (
     <div className="products">
       <ul className="products__list">
@@ -9,7 +10,7 @@ const ProductsList = ({ cartItems, sum }) => {
           <Item item={item} key={item.id} />
         ))}
       </ul>
-      <div className="products__total">{`Total: $${sum}`}</div>
+      <div className="products__total">{`Total: $${total}`}</div>
     </div>
   );
 };

@@ -24,11 +24,10 @@ class ShoppingCart extends Component {
   };
   render() {
     const count = this.state.cartItems.length;
-    const sum = this.state.cartItems.reduce((acc, { price }) => acc + price, 0);
     return (
       <div className="column">
-        <CartTitle userName={this.props.userData.firstName} count={count} />
-        <ProductsList cartItems={this.state.cartItems} sum={sum} />
+        <CartTitle userName={this.props.firstName} count={count} />
+        <ProductsList cartItems={this.state.cartItems} />
       </div>
     );
   }
