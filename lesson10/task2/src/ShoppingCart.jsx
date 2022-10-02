@@ -20,13 +20,19 @@ class ShoppingCart extends Component {
         name: 'iPhone 12',
         price: 1199,
       },
+      {
+        id: '4',
+        name: 'TV',
+        price: 400,
+      },
     ],
   };
   render() {
+    console.log(this.props);
     const count = this.state.cartItems.length;
     return (
       <div className="column">
-        <CartTitle userName={this.props.firstName} count={count} />
+        <CartTitle userName={this.props.userName} count={count} />
         <ProductsList cartItems={this.state.cartItems} />
       </div>
     );
