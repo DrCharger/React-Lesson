@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-class Numbers extends Component {
+class Numbers extends PureComponent {
   render() {
     return (
       <div className="number">
