@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class EvenNumbers extends Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps % 2 === 0;
+    return nextProps.number % 2 === 0;
   }
   render() {
     return (
@@ -14,13 +13,5 @@ class EvenNumbers extends Component {
     );
   }
 }
-Numbers.PropTypes = {
-  title: PropTypes.string,
-  numbers: PropTypes.number,
-};
-Numbers.defaultProps = {
-  title: 'Just 17',
-  numbers: 17,
-};
 
 export default EvenNumbers;

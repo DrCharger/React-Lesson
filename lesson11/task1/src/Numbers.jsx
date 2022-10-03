@@ -11,13 +11,12 @@ class Numbers extends PureComponent {
     );
   }
 }
-Numbers.PropTypes = {
+Numbers.propTypes = {
   title: PropTypes.string,
-  number: PropTypes.number,
+  number: PropTypes.number.isRequired,
 };
 Numbers.defaultProps = {
   title: 'Just 17',
-  number: 17,
 };
 
 export default Numbers;
