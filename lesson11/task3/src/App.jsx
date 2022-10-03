@@ -17,7 +17,7 @@ class App extends Component {
       <div className="app">
         <Expand title="Some title" isOpen={this.state.isOpen} handleChange={this.handleChange}>
           {this.state.isOpen ? (
-            <div class="expand__content">
+            <div className="expand__content">
               <p>
                 Hooks are a new addition in React 16.8. They let you use state and other React
                 features without writing a class.
