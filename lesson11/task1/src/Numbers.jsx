@@ -13,11 +13,11 @@ class Numbers extends PureComponent {
 }
 Numbers.PropTypes = {
   title: PropTypes.string,
-  numbers: PropTypes.number,
+  number: PropTypes.number,
 };
 Numbers.defaultProps = {
   title: 'Just 17',
-  numbers: 17,
+  number: 17,
 };
 
 export default Numbers;

@@ -20,10 +20,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <OddNumbers title={'Odd numbers'} numbers={this.state.numbers} />
-        <EvenNumbers title={'Even numbers'} numbers={this.state.numbers} />
-        <Numbers title={'All numbers'} numbers={this.state.numbers} />
-        <Numbers title={'Just 17'} numbers={17} />
+        <OddNumbers title={'Odd numbers'} number={this.state.numbers} />
+        <EvenNumbers title={'Even numbers'} number={this.state.numbers} />
+        <Numbers title={'All numbers'} number={this.state.numbers} />
+        <Numbers title={'Just 17'} number={17} />
       </div>
     );
   }
