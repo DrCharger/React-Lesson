@@ -2,8 +2,10 @@ import React from 'react';
 
 const Expand = ({ children, title, isOpen, handleChange }) => {
   let icon;
+  let content;
   if (isOpen) {
     icon = <i className="fas fa-chevron-up"></i>;
+    content = <div className="expand__content">{children}</div>;
   } else {
     icon = <i className="fas fa-chevron-down"></i>;
   }
@@ -15,7 +17,7 @@ const Expand = ({ children, title, isOpen, handleChange }) => {
           {icon}
         </button>
       </div>
-      <div className="expand__content">{children}</div>
+      {content}
     </div>
   );
 };
