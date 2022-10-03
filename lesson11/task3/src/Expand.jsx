@@ -3,7 +3,7 @@ import React from 'react';
 const Expand = ({ children, title, isOpen, handleChange }) => {
   let icon;
   let content;
-  if (!isOpen) {
+  if (isOpen) {
     icon = <i className="fas fa-chevron-up"></i>;
     content = <div className="expand__content">{children}</div>;
   } else {
