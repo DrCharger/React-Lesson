@@ -19,8 +19,8 @@ class App extends Component {
 
   render() {
     return (
-      <div class="app">
-        <button class="btn" onClick={this.showDialog}>
+      <div className="app">
+        <button className="btn" onClick={this.showDialog}>
           Show dialog
         </button>
         <Dialog title="Recommendation" isOpen={this.state.isOpen} onClose={this.hideDialog}>
