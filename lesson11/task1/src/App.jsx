@@ -23,7 +23,7 @@ class App extends Component {
         <OddNumbers title={'Odd numbers'} numbers={this.state.numbers} />
         <EvenNumbers title={'Even numbers'} numbers={this.state.numbers} />
         <Numbers title={'All numbers'} numbers={this.state.numbers} />
-        <Numbers />
+        <Numbers title={'Just 17'} numbers={17} />
       </div>
     );
   }
