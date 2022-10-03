@@ -15,7 +15,7 @@ const Expand = ({ children, title, isOpen, handleChange }) => {
           {icon}
         </button>
       </div>
-      {children}
+      <div class="expand__content">{children}</div>
     </div>
   );
 };
