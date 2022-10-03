@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
 class Expand extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-    };
-  }
+  state = {
+    isOpen: false,
+  };
 
   handleChange = () => {
     this.setState({
