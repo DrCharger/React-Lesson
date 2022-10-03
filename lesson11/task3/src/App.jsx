@@ -16,10 +16,12 @@ class App extends Component {
     return (
       <div className="app">
         <Expand title="Some title" isOpen={this.state.isOpen} handleChange={this.handleChange}>
-          <p>
-            Hooks are a new addition in React 16.8. They let you use state and other React features
-            without writing a class.
-          </p>
+          {!this.state.isOpen ? null : (
+            <p>
+              Hooks are a new addition in React 16.8. They let you use state and other React
+              features without writing a class.
+            </p>
+          )}
         </Expand>
       </div>
     );
