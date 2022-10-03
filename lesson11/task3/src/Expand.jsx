@@ -7,7 +7,7 @@ const Expand = ({ children, title, isOpen, handleChange }) => {
     icon = <i className="fas fa-chevron-down"></i>;
   } else {
     icon = <i className="fas fa-chevron-up"></i>;
-    content = <div className="expand__content">{children}</div>;
+    content = children;
   }
   return (
     <div className="expand border">
@@ -17,7 +17,7 @@ const Expand = ({ children, title, isOpen, handleChange }) => {
           {icon}
         </button>
       </div>
-      {content}
+      <div className="expand__content">{content}</div>
     </div>
   );
 };
