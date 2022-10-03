@@ -2,12 +2,10 @@ import React from 'react';
 
 const Expand = ({ children, title, isOpen, handleChange }) => {
   let icon;
-  let content;
   if (!isOpen) {
     icon = <i className="fas fa-chevron-down"></i>;
   } else {
     icon = <i className="fas fa-chevron-up"></i>;
-    content = children;
   }
   return (
     <div className="expand border">
@@ -17,7 +15,7 @@ const Expand = ({ children, title, isOpen, handleChange }) => {
           {icon}
         </button>
       </div>
-      <div className="expand__content">{content}</div>
+      <div className="expand__content">{isOpen && children}</div>
     </div>
   );
 };
