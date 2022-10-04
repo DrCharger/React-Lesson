@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Spinner from './Spinner';
+import PropTypes from 'prop-types';
 
 class InputElement extends Component {
   state = {
@@ -43,5 +44,14 @@ class InputElement extends Component {
     );
   }
 }
+
+InputElement.propTypes = {
+  onCreate: PropTypes.func.isRequired,
+  updater: PropTypes.bool,
+};
+
+InputElement.defaultProps = {
+  updater: true,
+};
 
 export default InputElement;
