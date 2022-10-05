@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 const User = () => {
   const { productId } = useParams();
+
   const [userData, setData] = useState(null);
 
   const fetchUser = () => {
@@ -10,11 +11,12 @@ const User = () => {
       .then(response => response.json())
       .then(data => setData(data));
   };
-  fetchUser();
 
+  useEffect(() => fetchUser(), []);
   if (userData === null) {
     return null;
   }
+
   const { avatar_url, name, location } = userData;
   return (
     <div className="user">
