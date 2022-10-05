@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-class User extends Component {
-  state = {
-    data: null,
+const User = () => {
+  const [fulldata, setData] = useState(null);
+
+  const { productId } = useParams();
+
+  const fetchDetails = () => {
+    fetch(`http://api.github.com/users/${productId}`)
+      .then(response => response.json())
+      .then(data => setData(data));
   };
 
-  get = () => {
-    console.log(this.props.match);
-    fetch(`http://api.github.com/users/${this.props.match.params.productId}`)
-      .then(response => response.json())
-      .then(data =>
-        this.setState({
-          data,
-        }),
-      );
-  };
-  render() {
-    if (this.state.data === null) {
-      this.get();
-      return null;
-    }
-    const { avatar_url, name, location } = this.state.data;
-    this.state.data = null;
+  useEffect(() => {
+    fetchDetails();
+  });
+
+  if (fulldata === null) {
+    return null;
+  } else {
+    const { avatar_url, name, location } = fulldata;
+
     return (
       <div className="user">
         <img alt="User Avatar" src={avatar_url} className="user__avatar" />
@@ -33,6 +31,6 @@ class User extends Component {
       </div>
     );
   }
-}
+};
 
 export default User;
