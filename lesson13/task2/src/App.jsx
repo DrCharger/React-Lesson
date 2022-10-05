@@ -26,10 +26,8 @@ const App = () => {
             {' '}
             <Home />
           </Route>
-          <Route path="/products">
-            {' '}
-            <Products />
-          </Route>
+          <Route path="/products" component={Products} />
+
           <Route path="/contacts">
             {' '}
             <Contacts />
