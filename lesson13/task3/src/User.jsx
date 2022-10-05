@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const User = () => {
-  const [userData, setData] = useState(null);
   const { productId } = useParams();
-  console.log(productId);
+  const [userData, setData] = useState(null);
+  const [user, setUser] = useState(productId);
+
   const fetchUser = () => {
     fetch(`http://api.github.com/users/${productId}`)
       .then(response => response.json())
@@ -13,6 +14,10 @@ const User = () => {
   useEffect(() => {
     fetchUser();
   }, []);
+  if (user !== productId) {
+    fetchUser();
+    setUser(productId);
+  }
   if (userData === null) {
     return null;
   }
