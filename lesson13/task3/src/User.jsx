@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const User = () => {
@@ -7,7 +7,7 @@ const User = () => {
   const [userData, setData] = useState(null);
 
   const fetchUser = () => {
-    fetch(`http://api.github.com/users/${productId}`)
+    fetch(`https://api.github.com/users/${productId}`)
       .then(response => response.json())
       .then(data => setData(data));
   };
@@ -19,7 +19,6 @@ const User = () => {
     return null;
   }
 
-  console.log(userData);
   const { avatar_url, name, location } = userData;
   return (
     <div className="user">
