@@ -8,14 +8,19 @@ const User = () => {
 
   const fetchUser = () => {
     fetch(`https://api.github.com/users/${userId}`)
-      .then(response => response.json())
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error();
+      })
       .then(data => setData(data));
   };
 
   useEffect(() => {
     fetchUser();
   }, [productId]);
-  if (userData === null) {
+  if (!userData) {
     return null;
   }
 
