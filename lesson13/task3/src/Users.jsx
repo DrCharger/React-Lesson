@@ -13,6 +13,9 @@ const Users = () => {
         <li className="navigation__item">
           <Link to="/users/facebook">Facebook</Link>
         </li>
+        <li className="navigation__item">
+          <Link to="/users/youtube">Youtube</Link>
+        </li>
       </ul>
       <Switch>
         <Route path="/users/:productId" component={User} />
