@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
 const Dimensions = () => {
-  const [diment, setDiment] = useState({
+  const [dimension, setDimension] = useState({
     width: null,
     height: null,
   });
 
   useEffect(() => {
-    const { innerWidth, innerHeight } = window;
-    setDiment({
+    const { innerHeight, innerWidth } = window;
+    setDimension({
       width: innerWidth,
       height: innerHeight,
     });
     const handleResize = e => {
-      const { innerWidth, innerHeight } = e.target;
-      setDiment({
+      const { innerHeight, innerWidth } = e.target;
+      setDimension({
         width: innerWidth,
         height: innerHeight,
       });
@@ -23,7 +23,9 @@ const Dimensions = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  return <div class="dimensions">{`${diment.width}px - ${diment.height}px`}</div>;
+
+  const { width, height } = dimension;
+  return <div className="dimensions">{`${width}px - ${height}px`}</div>;
 };
 
 export default Dimensions;
