@@ -11,15 +11,11 @@ const getTimeWithOffset = offset => {
 };
 
 const Clock = ({ offset, location }) => {
-  const [state, setState] = useState({
-    time: getTimeWithOffset(offset),
-  });
+  const [time, setTime] = useState(getTimeWithOffset(offset));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setState({
-        time: getTimeWithOffset(offset),
-      });
+      setTime(getTimeWithOffset(offset));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -27,7 +23,7 @@ const Clock = ({ offset, location }) => {
   return (
     <div className="clock">
       <div className="clock__location">{location}</div>
-      <div className="clock__time">{formatDate(state.time)}</div>
+      <div className="clock__time">{formatDate(time)}</div>
     </div>
   );
 };
