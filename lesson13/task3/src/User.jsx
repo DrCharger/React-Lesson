@@ -12,7 +12,7 @@ const User = () => {
       .then(data => setData(data));
   };
 
-  useEffect(() => fetchUser(), []);
+  useEffect(() => fetchUser(), [productId]);
   if (userData === null) {
     return null;
   }
