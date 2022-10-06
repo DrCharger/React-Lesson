@@ -2,12 +2,12 @@ import React, { Component, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const User = () => {
-  const { productId } = useParams();
+  const { userId } = useParams();
 
   const [userData, setData] = useState(null);
 
   const fetchUser = () => {
-    fetch(`https://api.github.com/users/${productId}`)
+    fetch(`https://api.github.com/users/${userId}`)
       .then(response => response.json())
       .then(data => setData(data));
   };
