@@ -15,9 +15,7 @@ const Users = () => {
         </li>
       </ul>
       <Switch>
-        <Route path="/users/:userId">
-          <User />
-        </Route>
+        <Route path="/users/:userId" component={User} />
 
         <Route path="/users">
           <span>Select a user please</span>
