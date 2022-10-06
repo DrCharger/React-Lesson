@@ -12,10 +12,13 @@ const User = () => {
       .then(data => setData(data));
   };
 
-  useEffect(() => fetchUser(), [productId]);
+  useEffect(() => {
+    fetchUser();
+  }, [productId]);
   if (userData === null) {
     return null;
   }
+
   console.log(userData);
   const { avatar_url, name, location } = userData;
   return (
