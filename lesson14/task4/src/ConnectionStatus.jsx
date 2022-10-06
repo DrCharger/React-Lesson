@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 const ConnectionStatus = () => {
-  const [status, setOnline] = useState({ name: 'Online', online: true });
+  const [status, setOnline] = useState({ name: 'online', online: true });
 
   const onOnline = () => {
-    setOnline({ name: 'Online', online: true });
+    setOnline({ name: 'online', online: true });
   };
   const onOffline = () => {
-    setOnline({ name: 'Offline', online: false });
+    setOnline({ name: 'offline', online: false });
   };
 
   useEffect(() => {
