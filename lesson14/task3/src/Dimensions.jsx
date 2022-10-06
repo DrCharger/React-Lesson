@@ -23,7 +23,7 @@ const Dimensions = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  return <div class="dimensions">{`${diment.width} - ${diment.height}`}</div>;
+  return <div class="dimensions">{`${diment.width}px - ${diment.height}px`}</div>;
 };
 
 export default Dimensions;
