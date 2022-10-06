@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
 
 const ConnectionStatus = () => {
-  const [isOnline, setOnline] = useState(true);
+  const [status, setOnline] = useState({ name: 'Online', online: true });
 
-  const toggleOnline = () => {
-    setOnline(!isOnline);
+  const onOnline = () => {
+    setOnline({ name: 'Online', online: true });
+  };
+  const onOffline = () => {
+    setOnline({ name: 'Offline', online: false });
   };
 
   useEffect(() => {
-    window.addEventListener('online', toggleOnline);
-    window.addEventListener('offline', toggleOnline);
+    window.addEventListener('online', onOnline);
+    window.addEventListener('offline', onOffline);
 
     return () => {
-      window.removeEventListener('online', toggleOnline);
-      window.removeEventListener('offline', toggleOnline);
+      window.removeEventListener('online', onOnline);
+      window.removeEventListener('offline', onOffline);
     };
   });
-
-  return isOnline ? (
-    <div className="status">Online</div>
-  ) : (
-    <div className="status status_offline">Offline</div>
-  );
+  const { name, online } = status;
+  return <div className={classNames('status', { status_offline: !online })}>{name}</div>;
 };
 
 export default ConnectionStatus;
